@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSense | Real-time Weather Forecasts</title>
+    <meta name="description" content="Get accurate, real-time weather forecasts">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="app-brand">
+                <i class="fas fa-cloud-sun logo-icon"></i>
+                <h1 class="logo-text">WeatherSense</h1>
+            </div>
+
+            <form class="weather-search" role="search">
+                <div class="search-container">
+                    <input type="search" id="city-search" placeholder="Search city..." class="weather-searchform"
+                        required>
+                    <button type="submit" class="search-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="header-controls">
+                <button class="location-btn" aria-label="Use current location">
+                    <i class="fas fa-location-arrow"></i>
+                </button>
+                <div class="weather-units" role="group" aria-label="Temperature units">
+                    <button class="weather-unit-celsius active">°C</button>
+                    <button class="weather-unit-fahrenheit">°F</button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="weather-error" role="alert"></div>
+
+        <main class="weather-main">
+            <section class="current-weather card">
+                <div class="weather-location">
+                    <h2 class="weather-city">WeatherSense</h2>
+                    <div class="weather-datetime">Search for a city to begin</div>
+                </div>
+
+                <div class="weather-display">
+                    <figure class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/01d@4x.png" alt="Current weather"
+                            class="weather-icon-img">
+                        <figcaption class="weather-forecast"></figcaption>
+                    </figure>
+
+                    <div class="temperature-container">
+                        <p class="weather-temperature">--°</p>
+                        <div class="weather-minmax">
+                            <p><i class="fas fa-temperature-arrow-down"></i> <span>--°</span></p>
+                            <p><i class="fas fa-temperature-arrow-up"></i> <span>--°</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="weather-details">
+                <div class="detail-card card">
+                    <i class="fas fa-temperature-three-quarters detail-icon"></i>
+                    <div class="detail-content">
+                        <p class="detail-label">Feels Like</p>
+                        <p class="weather-realfeel">--°</p>
+                    </div>
+                </div>
+
+                <div class="detail-card card">
+                    <i class="fas fa-droplet detail-icon"></i>
+                    <div class="detail-content">
+                        <p class="detail-label">Humidity</p>
+                        <p class="weather-humidity">--%</p>
+                    </div>
+                </div>
+
+                <div class="detail-card card">
+                    <i class="fas fa-wind detail-icon"></i>
+                    <div class="detail-content">
+                        <p class="detail-label">Wind</p>
+                        <p class="weather-wind">-- m/s</p>
+                    </div>
+                </div>
+
+                <div class="detail-card card">
+                    <i class="fas fa-gauge-high detail-icon"></i>
+                    <div class="detail-content">
+                        <p class="detail-label">Pressure</p>
+                        <p class="weather-pressure">-- hPa</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hourly-forecast card">
+                <h3 class="section-title">Hourly Forecast</h3>
+                <div class="hourly-container scroll-container"></div>
+            </section>
+
+            <section class="daily-forecast card">
+                <h3 class="section-title">5-Day Forecast</h3>
+                <div class="daily-container"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
